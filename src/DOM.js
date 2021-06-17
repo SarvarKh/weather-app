@@ -31,6 +31,21 @@ function createHeader() {
     return header;
 }
 
+const createSearchForm = () => {
+    const form = createE("form", false, "form");
+    const search = createE("input");
+    search.setAttribute('type', 'text');
+    search.setAttribute('id', 'cityName');
+    search.setAttribute('name', 'cityName');
+    search.setAttribute('placeholder', 'Enter city name');
+    search.setAttribute('autofocus', true);
+    const btn = createE("button", "Search", "search-btn");
+
+    form.appendChild(search);
+    form.appendChild(btn);
+    return form;
+}
+
 const createFooter = () => {
     const footer = createE('footer');
     const footerDiv = createE('div', 'Copyright © 2021 Sarvar Khalimov');
@@ -65,5 +80,6 @@ const createFooter = () => {
 
 export { createE };
 export { createHeader };
+export { createSearchForm };
 // export { createMain };
 export { createFooter };
