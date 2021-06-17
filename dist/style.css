@@ -7,16 +7,15 @@
 
 body {
     background-image: url('back-ground-new.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 header {
-    display: flex;
-    align-items: center;
-    padding: 1rem 1rem;
-    width: 80%;
+    padding: 1.5rem 1rem 1rem 1rem;
+    width: max-content;
     margin: 2rem auto 0 auto;
-    padding-bottom: 1rem;
-    padding-top: 1rem;
     background-color: rgba(100, 100, 100, 0.7);
     border-radius: 0.5rem;
     color: #fff;
@@ -49,4 +48,40 @@ footer {
 footer a {
     padding: 0 0.5rem;
     color: #fff;
+}
+
+
+/* Word swipe animation */
+.header-container {
+    overflow: hidden;
+    height: 2rem;
+    margin-top: -10px;
+}
+
+.h-stick-text {
+    font-size: 1.5rem;
+}
+
+.swipe {
+    margin-left: 0.5rem;
+    color: #eee;
+    height: 45px;
+    margin-bottom: 45px;
+    font-size: 1.5rem;
+}
+
+.header-animation { animation: flip2 10s cubic-bezier(0.23, 1, 0.32, 1.2) infinite; }
+
+@keyframes flip2 {
+
+    100% { margin-top: -360px; }
+    99.99% { margin-top: -270px; }
+    80% { margin-top: -270px; }
+    75% { margin-top: -180px; }
+    55% { margin-top: -180px; }
+    50% { margin-top: -90px; }
+    30% { margin-top: -90px; }
+    25% { margin-top: 0px; }
+    5% { margin-top: 0px; }
+    0% { margin-top: -270px; }
 }

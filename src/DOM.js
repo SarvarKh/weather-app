@@ -12,13 +12,19 @@ function createHeader() {
     const headerIcon = createE('i');
     headerIcon.classList.add('fas');
     headerIcon.classList.add('fa-cloud-sun');
+    const headerStick = createE('div', 'Travel Forecast -', 'h-stick-text');
     const animatedHeader = createE('div', false, 'header-animation');
-    const headerTitle1 = createE('h1', 'Travel Forecast - plan your journey wisely');
-    const headerTitle2 = createE('h1', 'Unique Weather App for travelers');
+    const headerTitle1 = createE('h1', '1 Choose your destination', 'swipe');
+    const headerTitle2 = createE('h1', '2 Check the weather and book flight', 'swipe');
+    const headerTitle3 = createE('h1', '3 Enjoy your trip!', 'swipe');
+    const headerTitle4 = createE('h1', ' ', 'swipe');
   
     headerContainer.appendChild(headerIcon);
+    headerContainer.appendChild(headerStick);
     animatedHeader.appendChild(headerTitle1);
     animatedHeader.appendChild(headerTitle2);
+    animatedHeader.appendChild(headerTitle3);
+    animatedHeader.appendChild(headerTitle4);
     headerContainer.appendChild(animatedHeader);
     header.appendChild(headerContainer);
   
