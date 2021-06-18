@@ -148,6 +148,11 @@ footer {
     color: #fff;
 }
 
+footer .fas {
+    font-size: 0.6rem;
+    margin: 0;
+}
+
 footer a {
     padding: 0 0.5rem;
     color: #fff;
