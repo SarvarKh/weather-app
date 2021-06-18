@@ -105,6 +105,9 @@ const createMain = () => {
 }
 
 const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, iconI, countryI) => {
+    const main = document.querySelector('main');
+    main.textContent = "";
+
     const generalCon1 = createE('div', false, 'general-conainer');
     const generalCon2 = createE('div', false, 'general-conainer');
     const generalCon3 = createE('div', false, 'general-conainer');
@@ -182,6 +185,9 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
 }
 
 const createDefaultErrorReply = () => {
+    const main = document.querySelector('main');
+    main.textContent = "";
+
     const result = createE('div', false, 'Error-container');
     const errorText = createE('div', 'City not found. Please check the spelling.', 'error-text' )
 
@@ -189,10 +195,21 @@ const createDefaultErrorReply = () => {
     document.querySelector('main').appendChild(result);
 }
 
+const fetchingMessage = (city) => {
+    const main = document.querySelector('main');
+
+    const result = createE('div', false, 'fetching-container');
+    const errorText = createE('div', 'Entered ' + city + ' is being fetched.', 'fetching-text' )
+
+    result.appendChild(errorText);
+    main.appendChild(result);
+}
+
 export { createE };
 export { createHeader };
 export { createToggleButton };
 export { createSearchForm };
+export { fetchingMessage };
 export { createMain };
 export { createWeatherMain };
 export { createDefaultErrorReply };
