@@ -84,13 +84,17 @@ const createMain = () => {
     return main;
 }
 
-const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI) => {
+const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, iconI) => {
     const con1 = createE('div', false, 'wheather-data-container');
     const con2 = createE('div', false, 'wheather-data-container');
     const con3 = createE('div', false, 'wheather-data-container');
     const con4 = createE('div', false, 'wheather-data-container');
     const con5 = createE('div', false, 'wheather-data-container');
     
+    
+    const con1Icon = createE('img', false, 'weather-icon');
+    const iconURL = "http://openweathermap.org/img/wn/" + iconI + "@2x.png";
+    con1Icon.setAttribute('src', iconURL);
     const con1Content = createE('div', 'Temperature ');
     const con2Content = createE('div', 'Feels like ');
     const con3Content = createE('div', 'Pressure ');
@@ -110,6 +114,7 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI) 
     humidity.textContent = humidityI;
     cityName.textContent = cityNameI;
 
+    con1.appendChild(con1Icon);
     con1.appendChild(con1Content);
     con1.appendChild(temp);
     con2.appendChild(con2Content);

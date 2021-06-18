@@ -12,11 +12,12 @@ const searchForCity = () => {
         const city = document.querySelector("#cityName");
         console.log("First: ", city.value);
 
-        fetch('https://api.openweathermap.org/data/2.5/weather?q='+city.value+'&appid=af70403a19469e0639313b5afa57330b', {mode: 'cors'})
+        fetch('https://api.openweathermap.org/data/2.5/weather?q='+city.value+'&units=metric&appid=af70403a19469e0639313b5afa57330b', {mode: 'cors'})
             .then(response => response.json())
             .then(data => {
+                console.log(data.weather[0].icon);
                 console.log(data);
-                createWeatherMain(data.main['temp'], data.main['feels_like'], data.main['pressure'], data.main['humidity'], data.name);
+                createWeatherMain(data.main['temp'], data.main['feels_like'], data.main['pressure'], data.main['humidity'], data.name, data.weather[0].icon);
             })
             .catch(err => console.log("Wrong city name"))
     })
