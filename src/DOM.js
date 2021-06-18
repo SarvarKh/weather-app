@@ -85,6 +85,25 @@ const createMain = () => {
 }
 
 const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, iconI) => {
+    const generalCon1 = createE('div', false, 'general-conainer');
+    const generalCon2 = createE('div', false, 'general-conainer');
+    const generalCon3 = createE('div', false, 'general-conainer');
+    const generalCon4 = createE('div', false, 'general-conainer');
+    const generalCon5 = createE('div', false, 'general-conainer');
+
+    const generalConIcon1 = createE('img', false, 'weather-icon');
+    const iconURL = "http://openweathermap.org/img/wn/" + iconI + "@2x.png";
+    generalConIcon1.setAttribute('src', iconURL);
+    const generalConIcon2 = createE('i', false, 'fas');
+    generalConIcon2.classList.add('fa-temperature-low');  
+    const generalConIcon3 = createE('i', false, 'fas');
+    generalConIcon3.classList.add('fa-wind');
+    const generalConIcon4 = createE('i', false, 'fas');
+    generalConIcon4.classList.add('fa-cloud-showers-heavy');
+    const generalConIcon5 = createE('i', false, 'fas');
+    generalConIcon5.classList.add('fa-landmark');
+    
+
     const con1 = createE('div', false, 'wheather-data-container');
     const con2 = createE('div', false, 'wheather-data-container');
     const con3 = createE('div', false, 'wheather-data-container');
@@ -92,12 +111,9 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
     const con5 = createE('div', false, 'wheather-data-container');
     
     
-    const con1Icon = createE('img', false, 'weather-icon');
-    const iconURL = "http://openweathermap.org/img/wn/" + iconI + "@2x.png";
-    con1Icon.setAttribute('src', iconURL);
     const con1Content = createE('div', 'Temperature ');
     const con2Content = createE('div', 'Feels like ');
-    const con3Content = createE('div', 'Pressure ');
+    const con3Content = createE('div', 'Wind speed ');
     const con4Content = createE('div', 'Humidity ');
     const con5Content = createE('div', 'City Name ');
     
@@ -110,11 +126,10 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
 
     temp.textContent = tempI + ' °C';
     feels_like.textContent = feels_likeI + ' °C';
-    pressure.textContent = pressureI + ' hPa';
+    pressure.textContent = pressureI + ' km/h';
     humidity.textContent = humidityI + ' %';
     cityName.textContent = cityNameI;
 
-    con1.appendChild(con1Icon);
     con1.appendChild(con1Content);
     con1.appendChild(temp);
     con2.appendChild(con2Content);
@@ -126,11 +141,22 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
     con5.appendChild(con5Content);
     con5.appendChild(cityName);
 
-    result.appendChild(con1);
-    result.appendChild(con2);
-    result.appendChild(con3);
-    result.appendChild(con4);
-    result.appendChild(con5);
+    generalCon1.appendChild(generalConIcon1);
+    generalCon1.appendChild(con1);
+    generalCon2.appendChild(generalConIcon2);
+    generalCon2.appendChild(con2);
+    generalCon3.appendChild(generalConIcon3);
+    generalCon3.appendChild(con3);
+    generalCon4.appendChild(generalConIcon4);
+    generalCon4.appendChild(con4);
+    generalCon5.appendChild(generalConIcon5);
+    generalCon5.appendChild(con5);
+
+    result.appendChild(generalCon1);
+    result.appendChild(generalCon2);
+    result.appendChild(generalCon3);
+    result.appendChild(generalCon4);
+    result.appendChild(generalCon5);
 
     document.querySelector('main').appendChild(result);
 }

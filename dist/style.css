@@ -102,14 +102,25 @@ input[type="text"]
     margin: 1rem auto 1rem auto;
     border-radius: 0.5rem;
     width: max-content;
+    border: 1px solid rgba(100, 100, 100, 0.7);
 }
 
 .wheather-data-container {
-    margin: 0.5rem;
+    margin: 1rem 0;
 }
 
-.wheather-data {
-    margin-left: 0.3rem;
+.general-conainer {
+    display: flex;
+    align-items: center;
+}
+
+.weather-icon {
+    width: 3rem;
+}
+
+.fas {
+    font-size: 1.6rem;
+    margin: 0 0.7rem 0 0.7rem;
 }
 
 /* Footer */

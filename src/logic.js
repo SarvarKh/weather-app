@@ -17,7 +17,7 @@ const searchForCity = () => {
             .then(data => {
                 console.log(data.weather[0].icon);
                 console.log(data);
-                createWeatherMain(data.main['temp'], data.main['feels_like'], data.main['pressure'], data.main['humidity'], data.name, data.weather[0].icon);
+                createWeatherMain(data.main['temp'], data.main['feels_like'], data.wind['speed'], data.main['humidity'], data.name, data.weather[0].icon);
             })
             .catch(err => console.log("Wrong city name"))
     })
