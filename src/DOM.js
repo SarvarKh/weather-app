@@ -57,10 +57,12 @@ const createSearchForm = () => {
     search.setAttribute('name', 'cityName');
     search.setAttribute('placeholder', 'Enter city name');
     search.setAttribute('autofocus', true);
-    const btn = createE("i", false, "search-btn");
-    btn.classList.add('fas');
-    btn.classList.add('fa-search');
+    const btn = createE("button", false, "search-btn");
+    const btnIcon = createE('i');
+    btnIcon.classList.add('fas');
+    btnIcon.classList.add('fa-search');
 
+    btn.appendChild(btnIcon);
     form.appendChild(search);
     form.appendChild(btn);
     return form;

@@ -3,14 +3,14 @@ import { createDefaultErrorReply } from './DOM';
 import { fetchingMessage } from './DOM';
 
 const searchForCity = () => {
-    const searchBtn = document.querySelector('.search-btn');
+    const form = document.querySelector('.form');
     
-    searchBtn.addEventListener('click', (e) => {
+    form.addEventListener('submit', (e) => {
         e.preventDefault();
 
         const city = document.querySelector("#cityName");
         console.log("First: ", city.value);
-        
+
         fetchingMessage(city.value);
 
         fetch('https://api.openweathermap.org/data/2.5/weather?q='+city.value+'&units=metric&appid=af70403a19469e0639313b5afa57330b', {mode: 'cors'})
