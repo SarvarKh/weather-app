@@ -84,19 +84,48 @@ const createMain = () => {
     return main;
 }
 
-const createCityWeather = (tempI, feels_likeI, pressureI) => {
-    const result = createE('div', false, 'result');
+const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI) => {
+    const con1 = createE('div', false, 'wheather-data-container');
+    const con2 = createE('div', false, 'wheather-data-container');
+    const con3 = createE('div', false, 'wheather-data-container');
+    const con4 = createE('div', false, 'wheather-data-container');
+    const con5 = createE('div', false, 'wheather-data-container');
+    
+    const con1Content = createE('div', 'Temperature ');
+    const con2Content = createE('div', 'Feels like ');
+    const con3Content = createE('div', 'Pressure ');
+    const con4Content = createE('div', 'Humidity ');
+    const con5Content = createE('div', 'City Name ');
+    
+    const result = createE('div', false, 'WeatherMain');
     const temp = createE('div', false, 'wheather-data');
     const feels_like = createE('div', false, 'wheather-data');
     const pressure = createE('div', false, 'wheather-data');
+    const humidity = createE('div', false, 'wheather-data');
+    const cityName = createE('div', false, 'wheather-data');
 
     temp.textContent = tempI;
     feels_like.textContent = feels_likeI;
     pressure.textContent = pressureI;
+    humidity.textContent = humidityI;
+    cityName.textContent = cityNameI;
 
-    result.appendChild(temp);
-    result.appendChild(feels_like);
-    result.appendChild(pressure);
+    con1.appendChild(con1Content);
+    con1.appendChild(temp);
+    con2.appendChild(con2Content);
+    con2.appendChild(feels_like);
+    con3.appendChild(con3Content);
+    con3.appendChild(pressure);
+    con4.appendChild(con4Content);
+    con4.appendChild(humidity);
+    con5.appendChild(con5Content);
+    con5.appendChild(cityName);
+
+    result.appendChild(con1);
+    result.appendChild(con2);
+    result.appendChild(con3);
+    result.appendChild(con4);
+    result.appendChild(con5);
 
     document.querySelector('main').appendChild(result);
 }
@@ -105,5 +134,5 @@ export { createE };
 export { createHeader };
 export { createSearchForm };
 export { createMain };
-export { createCityWeather };
+export { createWeatherMain };
 export { createFooter };

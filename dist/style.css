@@ -94,6 +94,26 @@ input[type="text"]
     border-radius: 0.5rem;
 }
 
+/* Main */
+.WeatherMain {
+    color: #fff;
+    background: red;
+    font-size: 1.2rem;
+    padding: 1rem 2rem;
+    margin: 1rem auto 1rem auto;
+    border-radius: 0.5rem;
+    width: max-content;
+}
+
+.wheather-data-container {
+    margin: 0.5rem;
+}
+
+.wheather-data {
+    margin-left: 0.3rem;
+}
+
+
 /* Footer */
 footer {
     padding: 0.5rem;
