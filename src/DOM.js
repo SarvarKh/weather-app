@@ -1,3 +1,6 @@
+import { celsiusToFahrenheit } from "./logic";
+import { fahrenheitToCelsius } from "./logic";
+
 const createE = (elementName, content, className, href) => {
     const element = document.createElement(elementName);
     if (content) { element.innerHTML = content; }
@@ -15,6 +18,19 @@ const createToggleButton = () => {
     input.setAttribute('type', 'checkbox');
     const span = createE('span', false, 'slider');
     span.classList.add('round');
+
+    span.addEventListener('click', () => {
+        const tempSpan = document.querySelector('.temp-data');
+        if (tempSpan.innerHTML.endsWith('°C')) {
+            let temp = parseFloat(tempSpan.innerHTML.split(' ')[0]);
+            temp = celsiusToFahrenheit(temp);
+            tempSpan.innerHTML = `${Math.round(temp)} °F`;
+        } else if (tempSpan.innerHTML.endsWith('°F')) {
+            let temp = parseFloat(tempSpan.innerHTML.split(' ')[0]);
+            temp = fahrenheitToCelsius(temp);
+            tempSpan.innerHTML = `${Math.round(temp)} °C`;
+        }
+    })
 
     toggleContainer.appendChild(input);
     toggleContainer.appendChild(span);
@@ -143,14 +159,14 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
     const con5Content = createE('div', 'Country, City ');
     
     const result = createE('div', false, 'WeatherMain');
-    const temp = createE('div', false, 'wheather-data');
-    const feels_like = createE('div', false, 'wheather-data');
-    const pressure = createE('div', false, 'wheather-data');
-    const humidity = createE('div', false, 'wheather-data');
-    const cityName = createE('div', false, 'wheather-data');
+    const temp = createE('div', false, 'temp-data');
+    const feels_like = createE('div', false, 'feels_like-data');
+    const pressure = createE('div', false, 'pressure-data');
+    const humidity = createE('div', false, 'humidity-data');
+    const cityName = createE('div', false, 'cityName-data');
 
-    temp.textContent = tempI + ' °C';
-    feels_like.textContent = feels_likeI + ' °C';
+    temp.textContent = Math.round(tempI) + ' °C';
+    feels_like.textContent = Math.round(feels_likeI) + ' °C';
     pressure.textContent = pressureI + ' km/h';
     humidity.textContent = humidityI + ' %';
     cityName.textContent = (countryI + ", " + cityNameI);
