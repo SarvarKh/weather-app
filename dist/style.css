@@ -12,6 +12,18 @@ body {
     background-position: center;
 }
 
+.sunny-bg {
+    background-image: url('back-ground-new.jpg');
+}
+
+.average-bg {
+    background-image: url('average.jpg');
+}
+
+.low-bg {
+    background-image: url('low2.jpg');
+}
+
 button {
     cursor: pointer;
 }

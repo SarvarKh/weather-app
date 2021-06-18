@@ -123,6 +123,15 @@ const createMain = () => {
 }
 
 const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, iconI, countryI) => {
+    const body = document.querySelector('body');
+    if (tempI >= 30) {
+      body.setAttribute('class', 'sunny-bg');
+    } else if (tempI >= 20) {
+      body.setAttribute('class', 'average-bg');
+    } else if (tempI < 20) {
+      body.setAttribute('class', 'low-bg');
+    }
+
     const main = document.querySelector('main');
     main.textContent = "";
 
