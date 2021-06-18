@@ -108,10 +108,10 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
     const humidity = createE('div', false, 'wheather-data');
     const cityName = createE('div', false, 'wheather-data');
 
-    temp.textContent = tempI;
-    feels_like.textContent = feels_likeI;
-    pressure.textContent = pressureI;
-    humidity.textContent = humidityI;
+    temp.textContent = tempI + ' °C';
+    feels_like.textContent = feels_likeI + ' °C';
+    pressure.textContent = pressureI + ' hPa';
+    humidity.textContent = humidityI + ' %';
     cityName.textContent = cityNameI;
 
     con1.appendChild(con1Icon);
