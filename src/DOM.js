@@ -78,8 +78,26 @@ const createFooter = () => {
     return footer;
 }
 
+const createCityWeather = (tempI, feels_likeI, pressureI) => {
+    const result = createE('div', false, 'result');
+    const temp = createE('div', false, 'wheather-data');
+    const feels_like = createE('div', false, 'wheather-data');
+    const pressure = createE('div', false, 'wheather-data');
+
+    temp.textContent = tempI;
+    feels_like.textContent = feels_likeI;
+    pressure.textContent = pressureI;
+
+    result.appendChild(temp);
+    result.appendChild(feels_like);
+    result.appendChild(pressure);
+
+    document.querySelector('#content').appendChild(result);
+}
+
 export { createE };
 export { createHeader };
 export { createSearchForm };
 // export { createMain };
+export { createCityWeather };
 export { createFooter };
