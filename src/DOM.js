@@ -6,6 +6,24 @@ const createE = (elementName, content, className, href) => {
     return element;
 };
 
+const createToggleButton = () => {
+    const toggleGen = createE('div', false, 'toggle-gen');
+    const text = createE('span', 'Celsius / Fahrenheit', 'text');
+
+    const toggleContainer = createE("label", false, 'switch');
+    const input = createE('input');
+    input.setAttribute('type', 'checkbox');
+    const span = createE('span', false, 'slider');
+    span.classList.add('round');
+
+    toggleContainer.appendChild(input);
+    toggleContainer.appendChild(span);
+    toggleGen.appendChild(text);
+    toggleGen.appendChild(toggleContainer);
+
+    return toggleGen;
+}
+
 function createHeader() {
     const header = createE('header');
     const headerContainer = createE('div', false, 'header-container');
@@ -163,6 +181,7 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
 
 export { createE };
 export { createHeader };
+export { createToggleButton };
 export { createSearchForm };
 export { createMain };
 export { createWeatherMain };
