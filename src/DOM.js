@@ -57,7 +57,9 @@ const createSearchForm = () => {
     search.setAttribute('name', 'cityName');
     search.setAttribute('placeholder', 'Enter city name');
     search.setAttribute('autofocus', true);
-    const btn = createE("button", "Search", "search-btn");
+    const btn = createE("i", false, "search-btn");
+    btn.classList.add('fas');
+    btn.classList.add('fa-search');
 
     form.appendChild(search);
     form.appendChild(btn);
@@ -102,7 +104,8 @@ const createMain = () => {
     return main;
 }
 
-const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, iconI) => {
+const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, iconI, countryI) => {
+    console.log(cityNameI, countryI);
     const generalCon1 = createE('div', false, 'general-conainer');
     const generalCon2 = createE('div', false, 'general-conainer');
     const generalCon3 = createE('div', false, 'general-conainer');
@@ -133,7 +136,7 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
     const con2Content = createE('div', 'Feels like ');
     const con3Content = createE('div', 'Wind speed ');
     const con4Content = createE('div', 'Humidity ');
-    const con5Content = createE('div', 'City Name ');
+    const con5Content = createE('div', 'Country, City ');
     
     const result = createE('div', false, 'WeatherMain');
     const temp = createE('div', false, 'wheather-data');
@@ -146,7 +149,7 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
     feels_like.textContent = feels_likeI + ' °C';
     pressure.textContent = pressureI + ' km/h';
     humidity.textContent = humidityI + ' %';
-    cityName.textContent = cityNameI;
+    cityName.textContent = (countryI + ", " + cityNameI);
 
     con1.appendChild(con1Content);
     con1.appendChild(temp);

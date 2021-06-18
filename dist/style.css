@@ -12,6 +12,10 @@ body {
     background-position: center;
 }
 
+button {
+    cursor: pointer;
+}
+
 header {
     padding: 1.5rem 1rem 1rem 1rem;
     width: max-content;
@@ -147,6 +151,10 @@ footer {
 footer a {
     padding: 0 0.5rem;
     color: #fff;
+}
+
+.fa-search {
+    font-size: 1rem;
 }
 
 /* Toggle button */
