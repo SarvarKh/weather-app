@@ -71,19 +71,18 @@ header i {
 /* Search form */
 .form {
     margin: 2rem auto 0 auto;
-    background: rgba(100, 100, 100, 0.7);
     width: max-content;
-    padding: 1rem 1.5rem;
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
+    padding: 0.5rem;
+    border-bottom: 1px solid #fff;
 }
 
 input[type="text"]
 {
     padding: 0.5rem 1.5rem;
     border: none;
-    border-radius: 0.5rem;
+    background: none;
+    color: #fff;
+    outline: none;
 }
 
 .search-btn {
@@ -91,7 +90,13 @@ input[type="text"]
     margin: 1rem auto 0 auto;
     padding: 0.5rem 1rem;
     border: none;
-    border-radius: 0.5rem;
+    color: #fff;
+    background: none;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #fff;
+    opacity: 1;
 }
 
 /* Main */
