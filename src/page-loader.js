@@ -9,7 +9,7 @@ function start() {
     const content = document.getElementById('content');
     content.appendChild(createHeader());
     content.appendChild(createSearchForm());
-    // content.appendChild(createMain());
+    content.appendChild(createMain());
     searchForCity();
     content.appendChild(createFooter());
 
