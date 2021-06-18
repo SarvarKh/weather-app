@@ -157,6 +157,19 @@ footer a {
     font-size: 1rem;
 }
 
+.Error-container {
+    background-color: rgba(206, 109, 109, 0.7);
+    width: max-content;
+    padding: 0.5rem 2rem;
+    margin: 3rem auto 0 auto;
+    border-radius: 1rem;
+}
+
+.error-text {
+    font-size: 1rem;
+    color: #fff;
+}
+
 /* Toggle button */
 /* The switch - the box around the slider */
 .toggle-gen {

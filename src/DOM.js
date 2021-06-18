@@ -105,7 +105,6 @@ const createMain = () => {
 }
 
 const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, iconI, countryI) => {
-    console.log(cityNameI, countryI);
     const generalCon1 = createE('div', false, 'general-conainer');
     const generalCon2 = createE('div', false, 'general-conainer');
     const generalCon3 = createE('div', false, 'general-conainer');
@@ -182,10 +181,19 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
     document.querySelector('main').appendChild(result);
 }
 
+const createDefaultErrorReply = () => {
+    const result = createE('div', false, 'Error-container');
+    const errorText = createE('div', 'City not found. Please check the spelling.', 'error-text' )
+
+    result.appendChild(errorText);
+    document.querySelector('main').appendChild(result);
+}
+
 export { createE };
 export { createHeader };
 export { createToggleButton };
 export { createSearchForm };
 export { createMain };
 export { createWeatherMain };
+export { createDefaultErrorReply };
 export { createFooter };
