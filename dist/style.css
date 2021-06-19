@@ -280,6 +280,55 @@ input:checked + .slider:before {
 }
 
 @media only screen 
+    and (min-device-width: 992px) 
+    and (max-device-width: 1280px)
+    and (-webkit-min-device-pixel-ratio: 2) {
+        .toggle-gen {
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+
+        .text {
+            color: rgba(100, 100, 100, 0.7);
+            margin-right: 0.5rem;
+        }
+
+        header {
+            margin-top: 6rem;
+        }
+
+        .form {
+            margin-top: 5rem;
+        }
+
+        .form input {
+            font-size: 1.8rem;
+        }
+
+        .form i {
+            font-size: 1.5rem;
+        }
+
+        main {
+            margin-top: 2rem;
+            font-size: 2rem;
+        }
+                
+        body {
+            background-image: url('back-ground-new.jpg');
+          
+            /* Full height */
+            height: 100%; 
+          
+            /* Center and scale the image nicely */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+
+@media only screen 
     and (min-device-width: 220px) 
     and (max-device-width: 992px)
     and (-webkit-min-device-pixel-ratio: 2) {
