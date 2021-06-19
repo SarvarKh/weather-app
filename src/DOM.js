@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/no-cycle
 import { celsiusToFahrenheit, fahrenheitToCelsius } from './logic';
 
 const createE = (elementName, content, className, href) => {
@@ -121,7 +122,7 @@ const createMain = () => {
   return main;
 };
 
-const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, iconI, countryI) => {
+const createWeatherMain = (tempI, feelsLikeI, pressureI, humidityI, cityNameI, iconI, country) => {
   const body = document.querySelector('body');
   if (tempI >= 30) {
     body.setAttribute('class', 'sunny-bg');
@@ -166,21 +167,21 @@ const createWeatherMain = (tempI, feels_likeI, pressureI, humidityI, cityNameI, 
 
   const result = createE('div', false, 'WeatherMain');
   const temp = createE('div', false, 'temp-data');
-  const feels_like = createE('div', false, 'feels_like-data');
+  const feelsLike = createE('div', false, 'feels_like-data');
   const pressure = createE('div', false, 'pressure-data');
   const humidity = createE('div', false, 'humidity-data');
   const cityName = createE('div', false, 'cityName-data');
 
   temp.textContent = `${Math.round(tempI)} °C`;
-  feels_like.textContent = `${Math.round(feels_likeI)} °C`;
+  feelsLike.textContent = `${Math.round(feelsLikeI)} °C`;
   pressure.textContent = `${pressureI} km/h`;
   humidity.textContent = `${humidityI} %`;
-  cityName.textContent = (`${countryI}, ${cityNameI}`);
+  cityName.textContent = (`${country}, ${cityNameI}`);
 
   con1.appendChild(con1Content);
   con1.appendChild(temp);
   con2.appendChild(con2Content);
-  con2.appendChild(feels_like);
+  con2.appendChild(feelsLike);
   con3.appendChild(con3Content);
   con3.appendChild(pressure);
   con4.appendChild(con4Content);

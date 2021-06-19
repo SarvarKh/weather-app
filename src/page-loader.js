@@ -1,5 +1,5 @@
 import {
-  createE, createHeader, createSearchForm, createMain, createFooter, createToggleButton,
+  createHeader, createSearchForm, createMain, createFooter, createToggleButton,
 } from './DOM';
 
 import { searchForCity } from './logic';
