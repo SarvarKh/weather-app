@@ -27,10 +27,6 @@
 
 [Live Demo Link](https://travel-forecast.netlify.app/)
 
-## Website demo on YouTube 
-
-[YouTube Demo Link](https://youtu.be/x0ZowZuOVTU)
-
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
