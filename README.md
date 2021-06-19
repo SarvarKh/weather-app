@@ -5,7 +5,7 @@
 > A responsive weather app that pulls from the OpenWeatherMap API to allow users to search for and view the forecast in cities worldwide. Built with JavaScript using webpack and async functions.
 
 <div align="center">
-  <img src="screenshots/general.jpg?raw=true" width="100%" height="auto"/>
+  <img src="screenshots/general.png?raw=true" width="100%" height="auto"/>
   <img src="screenshots/desktop_00.jpg?raw=true" width="40%" height="auto"/>
   <img src="screenshots/tablet.jpg?raw=true" width="40%" height="auto"/>
   <img src="screenshots/desktop_01.png?raw=true" width="40%" height="auto"/>
