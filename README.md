@@ -25,7 +25,7 @@
 
 ## Live Demo
 
-[Live Demo Link](https://smart-to-do-list.netlify.app/)
+[Live Demo Link](https://travel-forecast.netlify.app/)
 
 ## Website demo on YouTube 
 
