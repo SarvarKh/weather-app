@@ -1,1 +1,3 @@
-console.log("Hey from src/index.js");
+import start from './page-loader';
+
+document.body.appendChild(start());
