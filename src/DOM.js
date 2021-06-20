@@ -21,14 +21,21 @@ const createToggleButton = () => {
 
   span.addEventListener('click', () => {
     const tempSpan = document.querySelector('.temp-data');
+    const feelsLikeData = document.querySelector('.feels_like-data');
     if (tempSpan.innerHTML.endsWith('°C')) {
       let temp = parseFloat(tempSpan.innerHTML.split(' ')[0]);
       temp = celsiusToFahrenheit(temp);
       tempSpan.innerHTML = `${Math.round(temp)} °F`;
+      let feelsLike = parseFloat(feelsLikeData.innerHTML.split(' ')[0]);
+      feelsLike = celsiusToFahrenheit(feelsLike);
+      feelsLikeData.innerHTML = `${Math.round(feelsLike)} °F`;
     } else if (tempSpan.innerHTML.endsWith('°F')) {
       let temp = parseFloat(tempSpan.innerHTML.split(' ')[0]);
       temp = fahrenheitToCelsius(temp);
       tempSpan.innerHTML = `${Math.round(temp)} °C`;
+      let feelsLike = parseFloat(tempSpan.innerHTML.split(' ')[0]);
+      feelsLike = fahrenheitToCelsius(feelsLike);
+      feelsLikeData.innerHTML = `${Math.round(feelsLike)} °C`;
     }
   });
 
