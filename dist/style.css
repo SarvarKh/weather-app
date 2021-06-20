@@ -176,23 +176,35 @@ footer a {
 
 .Error-container {
     background-color: rgba(206, 109, 109, 0.7);
-    width: max-content;
     padding: 0.5rem 2rem;
     margin: 3rem auto 0 auto;
     border-radius: 1rem;
+    width: 70%;
 }
 
 .error-text {
     font-size: 1rem;
     color: #fff;
+    text-align: center;
+}
+
+#autoLocationWeather {
+    background-color: rgba(206, 109, 109, 0.7);
+    margin: 3rem auto 0 auto;
+    border-radius: 1rem;
+    width: 70%;
+    font-size: 1rem;
+    color: #fff;
+    text-align: center;
 }
 
 .fetching-container {
     background-color: rgba(100, 100, 100, 0.7);
-    width: max-content;
+    width: 50%;
     padding: 0.5rem 2rem;
     margin: 3rem auto 0 auto;
     border-radius: 1rem;
+    text-align: center;
 }
 
 .fetching-text {

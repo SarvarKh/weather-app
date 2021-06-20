@@ -125,6 +125,10 @@ const createFooter = () => {
 
 const createMain = () => {
   const main = createE('main');
+  const autoLocationWeather = createE("div");
+  autoLocationWeather.setAttribute('id', 'autoLocationWeather');
+  
+  main.appendChild(autoLocationWeather);
   document.querySelector('#content').appendChild(main);
   return main;
 };
@@ -227,11 +231,22 @@ const createDefaultErrorReply = () => {
   document.querySelector('main').appendChild(result);
 };
 
+const createAutoLocationErrorReply = () => {
+  const main = document.querySelector('main');
+  main.textContent = '';
+
+  const result = createE('div', false, 'Error-container');
+  const errorText = createE('div', "We couldn't find your city API based on your geo location in our server. Please enter city name in the search box.", 'error-text');
+
+  result.appendChild(errorText);
+  document.querySelector('main').appendChild(result);
+};
+
 const fetchingMessage = (city) => {
   const main = document.querySelector('main');
 
   const result = createE('div', false, 'fetching-container');
-  const errorText = createE('div', `Entered ${city} is being fetched.`, 'fetching-text');
+  const errorText = createE('div', `City ${city} is being fetched.`, 'fetching-text');
 
   result.appendChild(errorText);
   main.appendChild(result);
@@ -245,4 +260,5 @@ export { fetchingMessage };
 export { createMain };
 export { createWeatherMain };
 export { createDefaultErrorReply };
+export { createAutoLocationErrorReply };
 export { createFooter };

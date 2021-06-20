@@ -2,7 +2,7 @@ import {
   createHeader, createSearchForm, createMain, createFooter, createToggleButton,
 } from './DOM';
 
-import { searchForCity } from './logic';
+import { searchForCity, checkGeoLocation } from './logic';
 
 function start() {
   const content = document.getElementById('content');
@@ -11,6 +11,7 @@ function start() {
   content.appendChild(createSearchForm());
   content.appendChild(createMain());
   searchForCity();
+  checkGeoLocation();
   content.appendChild(createFooter());
 
   return content;
