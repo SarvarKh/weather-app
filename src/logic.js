@@ -1,8 +1,12 @@
 // eslint-disable-next-line import/no-cycle
-import { createWeatherMain, createDefaultErrorReply, createAutoLocationErrorReply, fetchingMessage, createE } from './DOM';
+import {
+  createWeatherMain,
+  createDefaultErrorReply,
+  createAutoLocationErrorReply,
+  fetchingMessage,
+} from './DOM';
 
 const fetchData = (city) => {
-
   fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=af70403a19469e0639313b5afa57330b`, { mode: 'cors' })
     .then((response) => response.json())
     .then((data) => {
@@ -19,7 +23,7 @@ const fetchData = (city) => {
     .catch(() => {
       createDefaultErrorReply();
     });
-}
+};
 
 const searchForCity = () => {
   const form = document.querySelector('.form');
@@ -36,27 +40,26 @@ const searchForCity = () => {
 
 const getCityNameOnGeoLocation = (latitude, longitude) => {
   fetch(`https://api.openweathermap.org/geo/1.0/reverse?lat=${latitude}&lon=${longitude}&appid=17c75489c7d51e26cfe6254a64c6e232`)
-  .then((response) => response.json())
-  .then((data) => {
-    fetchData(data[0].name);
-  })
-  .catch(() => {
-    createAutoLocationErrorReply(position.coords.latitude, position.coords.longitude);
-  });
-}
+    .then((response) => response.json())
+    .then((data) => {
+      fetchData(data[0].name);
+    })
+    .catch(() => {
+      // eslint-disable-next-line no-undef
+      createAutoLocationErrorReply(position.coords.latitude, position.coords.longitude);
+    });
+};
 
 function showPosition(position) {
-  let x = document.getElementById("autoLocationWeather");
-
   getCityNameOnGeoLocation(position.coords.latitude, position.coords.longitude);
 }
 
 function getLocation() {
-  let x = document.getElementById("autoLocationWeather");
+  const x = document.getElementById('autoLocationWeather');
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
+  } else {
+    x.innerHTML = 'Geolocation is not supported by this browser.';
   }
 }
 
@@ -66,10 +69,12 @@ const checkGeoLocation = () => {
   if (city.value === '') {
     getLocation();
   }
-}
+};
 
 const celsiusToFahrenheit = (celsuis) => (celsuis * (9 / 5)) + 32;
 
 const fahrenheitToCelsius = (fahrenheit) => (fahrenheit - 32) * (5 / 9);
 
-export { searchForCity, celsiusToFahrenheit, fahrenheitToCelsius, checkGeoLocation };
+export {
+  searchForCity, celsiusToFahrenheit, fahrenheitToCelsius, checkGeoLocation,
+};

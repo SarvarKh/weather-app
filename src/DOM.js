@@ -125,9 +125,9 @@ const createFooter = () => {
 
 const createMain = () => {
   const main = createE('main');
-  const autoLocationWeather = createE("div");
+  const autoLocationWeather = createE('div');
   autoLocationWeather.setAttribute('id', 'autoLocationWeather');
-  
+
   main.appendChild(autoLocationWeather);
   document.querySelector('#content').appendChild(main);
   return main;
